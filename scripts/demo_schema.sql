@@ -1,0 +1,15 @@
+CREATE TABLE departments (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100) NOT NULL);
+CREATE TABLE employees (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  salary DECIMAL(10,2),
+  department_id INT,
+  FOREIGN KEY (department_id) REFERENCES departments(id)
+);
+CREATE TABLE users (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), email VARCHAR(150));
+CREATE TABLE orders (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  amount DECIMAL(10,2),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
