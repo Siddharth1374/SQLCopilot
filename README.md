@@ -1,7 +1,8 @@
 # SQL Translator
 
 Bidirectional **SQL ⇄ Natural Language** translator with schema-aware generation, validation,
-explanations, optimization hints and a safety layer. MySQL dialect.
+explanations, optimization hints .
+<img width="1897" height="857" alt="image" src="https://github.com/user-attachments/assets/198a1ae8-67ea-4f14-9d38-b713b1b5f143" />
 
 ## Architecture
 
@@ -35,9 +36,3 @@ cd backend && pip install -r requirements.txt && uvicorn app.main:app --reload
 cd frontend && npm install && npm run dev
 ```
 
-API docs: http://localhost:8000/docs · Tests: `make test`
-
-## Security notes
-- `READ_ONLY_MODE=true` by default; non-SELECT statements are blocked at `/execute`.
-- Use a MySQL user with **SELECT-only** grants for `TARGET_DB_URL`.
-- The LLM sees schema text only. Execution always goes through validator + safety.
